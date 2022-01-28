@@ -3,7 +3,7 @@ SELECT
   p.id, p.time, t.id as tb_id, t.location, c.license_plate,
   o.id as owner_id, o.name, o.address, o.email, o.phone
 FROM passing p
-FULL JOIN
+LEFT JOIN
 (
 car c INNER JOIN person o
 ON o.id = c.owner_id
