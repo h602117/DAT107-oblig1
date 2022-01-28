@@ -17,12 +17,10 @@ SELECT
   p.id, p.time, t.id as tb_id, t.location, c.license_plate,
   o.id as owner_id, o.name, o.address, o.email, o.phone
 FROM passing p
-INNER JOIN
-(
-car c INNER JOIN person o
-ON o.id = c.owner_id
-)
+INNER JOIN car c
 ON c.license_plate = p.car_license_plate
+INNER JOIN person o
+ON o.id = c.owner_id
 INNER JOIN toll_booth t
 ON t.id = p.toll_booth_id;
 
