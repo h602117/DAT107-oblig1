@@ -26,6 +26,9 @@ ON c.license_plate = p.car_license_plate
 INNER JOIN toll_booth t
 ON t.id = p.toll_booth_id;
 
+-- d)
+-- TODO: relasjonsalgebra idk
+
 -- e)
 SELECT car_license_plate, COUNT(car_license_plate) as count_passings
 FROM passing
