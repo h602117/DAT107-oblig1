@@ -25,7 +25,9 @@ INNER JOIN toll_booth t
 ON t.id = p.toll_booth_id;
 
 -- d)
--- TODO: relasjonsalgebra idk
+-- PI<p.id, p.time, t.id, t.location, c.license_plate, o.id, o.name, o.address, o.email, o.phone>
+-- SIGMA<c.liscense_plate = p.car_license_plate AND o.id = c.owner_id AND t.id = p.toll_booth_id>
+-- (passing p X car c X person o X toll_booth t)
 
 -- e)
 SELECT car_license_plate, COUNT(car_license_plate) as count_passings
